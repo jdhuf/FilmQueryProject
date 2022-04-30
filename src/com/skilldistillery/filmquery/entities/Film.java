@@ -18,18 +18,14 @@ public class Film {
 	private String features;
 	private String language;
 
-
 	private List<Actor> actors;
-	
-	public Film () {
-		
+
+	public Film() {
+
 	}
-	
-	
 
 	public Film(int filmId, String title, String desc, int releaseYear, String langId, int rentDur, double rate,
-			int length, double repCost, String rating, String features, String language
-			) {
+			int length, double repCost, String rating, String features, String language) {
 		super();
 		this.filmId = filmId;
 		this.title = title;
@@ -44,7 +40,6 @@ public class Film {
 		this.features = features;
 		this.language = language;
 
-		
 	}
 
 	public int getFilmId() {
@@ -143,10 +138,6 @@ public class Film {
 		this.language = language;
 	}
 
-
-
-
-
 	public List<Actor> getActors() {
 		return actors;
 	}
@@ -159,13 +150,14 @@ public class Film {
 	public String toString() {
 		return "Film [filmId=" + filmId + ", title=" + title + ", desc=" + desc + ", releaseYear=" + releaseYear
 				+ ", langId=" + langId + ", rentDur=" + rentDur + ", rate=" + rate + ", length=" + length + ", repCost="
-				+ repCost + ", rating=" + rating + ", features=" + features + ", language=" + language  + ", actors=" + actors + "]";
+				+ repCost + ", rating=" + rating + ", features=" + features + ", language=" + language + ", actors="
+				+ actors + "]";
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(actors, desc, features, filmId, langId, language, length, rate, rating,
-				releaseYear, rentDur, repCost, title);
+		return Objects.hash(actors, desc, features, filmId, langId, language, length, rate, rating, releaseYear,
+				rentDur, repCost, title);
 	}
 
 	@Override
@@ -177,10 +169,10 @@ public class Film {
 		if (getClass() != obj.getClass())
 			return false;
 		Film other = (Film) obj;
-		return Objects.equals(actors, other.actors) 
-				&& Objects.equals(desc, other.desc) && Objects.equals(features, other.features)
-				&& filmId == other.filmId && langId == other.langId && Objects.equals(language, other.language)
-				&& length == other.length && Double.doubleToLongBits(rate) == Double.doubleToLongBits(other.rate)
+		return Objects.equals(actors, other.actors) && Objects.equals(desc, other.desc)
+				&& Objects.equals(features, other.features) && filmId == other.filmId && langId == other.langId
+				&& Objects.equals(language, other.language) && length == other.length
+				&& Double.doubleToLongBits(rate) == Double.doubleToLongBits(other.rate)
 				&& Objects.equals(rating, other.rating) && releaseYear == other.releaseYear && rentDur == other.rentDur
 				&& Double.doubleToLongBits(repCost) == Double.doubleToLongBits(other.repCost)
 				&& Objects.equals(title, other.title);

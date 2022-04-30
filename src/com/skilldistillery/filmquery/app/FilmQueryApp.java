@@ -14,9 +14,10 @@ public class FilmQueryApp {
 
   public static void main(String[] args) {
     FilmQueryApp app = new FilmQueryApp();
-    app.test();
-  //  app.test2();
+   // app.test();
+    app.test2();
   //  app.test3();
+   // app.test4();
   //  app.launch();
   }
 
@@ -26,7 +27,7 @@ public class FilmQueryApp {
   }
   
   private void test2() {
-	List < Film> film = db.findFilmsByActorId(33);
+	List < Film> film = db.findFilmsByActorId(1);
 		System.out.println(film);	  
 			  
   }
@@ -35,6 +36,13 @@ public class FilmQueryApp {
 	    Actor actor = db.findActorById(1);
 	    System.out.println(actor);
 	  }
+  
+  private void test4() {
+		List < Actor> actor = db.findActorsByFilmId(23);
+		System.out.println(actor);	  
+			  
+	  
+  }
 
   private void launch() {
     Scanner input = new Scanner(System.in);

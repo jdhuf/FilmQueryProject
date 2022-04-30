@@ -5,38 +5,74 @@ import java.util.Objects;
 
 public class Actor {
 
-	private int id;
-	private String FirstName;
-	private String LastName;
+	private int actorId;
+	private String firstName;
+	private String lastName;
+	
 
-	public int getId() {
-		return id;
+
+
+	public Actor(int actorId, String firstName, String lastName) {
+		super();
+		this.actorId = actorId;
+		this.firstName = firstName;
+		this.lastName = lastName;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public Actor () {
+		
 	}
+
+
+	public int getActorId() {
+		return actorId;
+	}
+
+
+
+	public void setActorId(int actorId) {
+		this.actorId = actorId;
+	}
+
+
 
 	public String getFirstName() {
-		return FirstName;
+		return firstName;
 	}
+
+
 
 	public void setFirstName(String firstName) {
-		FirstName = firstName;
+		this.firstName = firstName;
 	}
+
+
 
 	public String getLastName() {
-		return LastName;
+		return lastName;
 	}
 
+
+
 	public void setLastName(String lastName) {
-		LastName = lastName;
+		this.lastName = lastName;
 	}
+
+
+
+	public void setFilms(List<Film> findFilmsByActorId) {
+		// TODO Auto-generated method stub
+
+	}
+
+
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(FirstName, LastName, id);
+		return Objects.hash(actorId, firstName, lastName);
 	}
+
+
 
 	@Override
 	public boolean equals(Object obj) {
@@ -47,19 +83,17 @@ public class Actor {
 		if (getClass() != obj.getClass())
 			return false;
 		Actor other = (Actor) obj;
-		return Objects.equals(FirstName, other.FirstName) && Objects.equals(LastName, other.LastName) && id == other.id;
+		return actorId == other.actorId && Objects.equals(firstName, other.firstName)
+				&& Objects.equals(lastName, other.lastName);
 	}
+	
+	
 
-	public void setFilms(List<Film> findFilmsByActorId) {
-		// TODO Auto-generated method stub
-
+	@Override
+	public String toString() {
+		return "Actor [id=" + actorId + ", FirstName=" + firstName + ", LastName=" + lastName + "]";
 	}
-
-//	@Override
-//	public String toString() {
-//		return "Actor [id=" + id + ", FirstName=" + FirstName + ", LastName=" + LastName + "]";
-//	}
-//	
+	
 	
 
 }
