@@ -1,12 +1,13 @@
 package com.skilldistillery.filmquery.entities;
 
+import java.util.List;
 import java.util.Objects;
 
 public class Actor {
 
 	private int id;
-	private String first_name;
-	private String last_name;
+	private String FirstName;
+	private String LastName;
 
 	public int getId() {
 		return id;
@@ -16,30 +17,25 @@ public class Actor {
 		this.id = id;
 	}
 
-	public String getFirst_name() {
-		return first_name;
+	public String getFirstName() {
+		return FirstName;
 	}
 
-	public void setFirst_name(String first_name) {
-		this.first_name = first_name;
+	public void setFirstName(String firstName) {
+		FirstName = firstName;
 	}
 
-	public String getLast_name() {
-		return last_name;
+	public String getLastName() {
+		return LastName;
 	}
 
-	public void setLast_name(String last_name) {
-		this.last_name = last_name;
-	}
-
-	@Override
-	public String toString() {
-		return "Actor [id=" + id + ", first_name=" + first_name + ", last_name=" + last_name + "]";
+	public void setLastName(String lastName) {
+		LastName = lastName;
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(first_name, id, last_name);
+		return Objects.hash(FirstName, LastName, id);
 	}
 
 	@Override
@@ -51,8 +47,19 @@ public class Actor {
 		if (getClass() != obj.getClass())
 			return false;
 		Actor other = (Actor) obj;
-		return Objects.equals(first_name, other.first_name) && id == other.id
-				&& Objects.equals(last_name, other.last_name);
+		return Objects.equals(FirstName, other.FirstName) && Objects.equals(LastName, other.LastName) && id == other.id;
 	}
+
+	public void setFilms(List<Film> findFilmsByActorId) {
+		// TODO Auto-generated method stub
+
+	}
+
+//	@Override
+//	public String toString() {
+//		return "Actor [id=" + id + ", FirstName=" + FirstName + ", LastName=" + LastName + "]";
+//	}
+//	
+	
 
 }
