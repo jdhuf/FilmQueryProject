@@ -21,6 +21,7 @@ public class FilmQueryApp {
 		// app.test3();
 		// app.test4();
 		// app.test5();
+		
 		app.launch();
 	}
 
@@ -47,7 +48,7 @@ public class FilmQueryApp {
 	}
 
 	private void test5() {
-		List<Film> film = db.findFilmsBySearchKeyword("Anaconda");
+		List<Film> film = db.findFilmsBySearchKeyword("anaconda");
 		System.out.println(film);
 	}
 
@@ -57,7 +58,7 @@ public class FilmQueryApp {
 //		startUserInterface(input);
 //		input.close();
 
-		int userChoice = 3;
+		int userChoice = 0;
 
 		while (true) {
 			userChoice = getMenuChoice();
@@ -72,10 +73,11 @@ public class FilmQueryApp {
 						+ "(Valid film ids are integer numbers from 1 to 1000.)");
 				
 				Film film = db.findFilmById(kb.nextInt());
+				kb.nextLine();
 				
 				if (film == null) {
 					System.out.println("Film not found. \n"
-							+ "Please be sure to enter a valid film id when looking up a film by its id.");
+							+ "Please be sure to enter a valid film id.");
 					System.out.println();
 				}
 				
@@ -93,6 +95,7 @@ public class FilmQueryApp {
 				System.out.println("Please enter a keyword to search for a film.");
 				
 				List<Film> film = db.findFilmsBySearchKeyword(kb.next());
+				kb.nextLine();
 				System.out.println(film);
 				System.out.println();
 			
@@ -103,6 +106,7 @@ public class FilmQueryApp {
 
 
 			}
+						
 
 		}
 		
@@ -119,16 +123,20 @@ public class FilmQueryApp {
 		System.out.println("3: Exit the application");
 
 		int userMenuSelection;
-
+		
+		
 		try {
 			userMenuSelection = kb.nextInt();
 			if (userMenuSelection > 3 || userMenuSelection < 0) {
-				userMenuSelection = 3;
+				userMenuSelection = 0;
+				System.out.println("Invalid entry. Please try again.\n");
 			}
 		} catch (Exception e) {
-			userMenuSelection = 3;
+			userMenuSelection = 0;
 		}
 		return userMenuSelection;
+	
+		
 	}
 
 	

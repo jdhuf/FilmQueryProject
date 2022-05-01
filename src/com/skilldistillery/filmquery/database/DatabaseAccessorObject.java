@@ -187,7 +187,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 		try {
 			Connection conn = DriverManager.getConnection(URL, user, pass);
 
-			String sql = "SELECT film.id, film.title, film.description, release_year, language_id, rental_duration, \n"
+			String sql = "SELECT DISTINCT film.id, film.title, film.description, release_year, language_id, rental_duration, \n"
 					+ " rental_rate, length, replacement_cost, rating, special_features, language.name\n"
 					+ "	FROM film JOIN film_actor ON film.id = film_actor.film_id \n"
 					+ " JOIN language ON language.id=film.language_id\n WHERE film.title LIKE ? OR film.description LIKE ?";
