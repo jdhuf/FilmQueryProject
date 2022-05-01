@@ -19,7 +19,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 
 	@Override
 	public Film findFilmById(int filmId) {
-		
+
 		Film film = null;
 
 		try {
@@ -63,9 +63,9 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 
 	@Override
 	public Actor findActorById(int actorId) {
-		
+
 		Actor actor = null;
-		
+
 		try {
 			Connection conn = DriverManager.getConnection(URL, user, pass);
 
@@ -73,7 +73,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setInt(1, actorId);
 			ResultSet rs = stmt.executeQuery();
-			
+
 			if (rs.next()) {
 
 				actor = new Actor();
@@ -84,21 +84,21 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 				actor.setFilms(findFilmsByActorId(actorId));
 
 			}
-		} 
-		
+		}
+
 		catch (SQLException e) {
 			e.printStackTrace();
 		}
 
 		return actor;
-		
+
 	}
 
 	@Override
 	public List<Film> findFilmsByActorId(int actorId) {
-		
+
 		List<Film> films = new ArrayList<>();
-		
+
 		try {
 			Connection conn = DriverManager.getConnection(URL, user, pass);
 
@@ -110,9 +110,9 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 			stmt.setInt(1, actorId);
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
-				
+
 				Film film = new Film();
-							
+
 				film.setFilmId(rs.getInt(1));
 				film.setTitle(rs.getString(2));
 				film.setDesc(rs.getString(3));
@@ -126,27 +126,27 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 				film.setFeatures(rs.getString(11));
 				film.setLanguage(rs.getString(12));
 				film.setActors(findActorsByFilmId(rs.getInt(1)));
-			
+
 				films.add(film);
 			}
-			
+
 			rs.close();
 			stmt.close();
 			conn.close();
-		} 
-		
+		}
+
 		catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return films;
 	}
 
 	@Override
 	public List<Actor> findActorsByFilmId(int filmId) {
-		
+
 		List<Actor> actors = new ArrayList<>();
-		
+
 		try {
 			Connection conn = DriverManager.getConnection(URL, user, pass);
 
@@ -166,16 +166,16 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 
 				actors.add(actor);
 			}
-			
+
 			rs.close();
 			stmt.close();
 			conn.close();
-		} 
-		
+		}
+
 		catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return actors;
 	}
 
@@ -183,7 +183,7 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 	public List<Film> findFilmsBySearchKeyword(String keyword) {
 
 		List<Film> films = new ArrayList<>();
-		
+
 		try {
 			Connection conn = DriverManager.getConnection(URL, user, pass);
 
@@ -219,16 +219,16 @@ public class DatabaseAccessorObject implements DatabaseAccessor {
 				films.add(film);
 
 			}
-			
+
 			rs.close();
 			stmt.close();
 			conn.close();
-		} 
-		
+		}
+
 		catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return films;
 
 	}
