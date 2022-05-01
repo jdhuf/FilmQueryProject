@@ -21,7 +21,7 @@ public class FilmQueryApp {
 		// app.test3();
 		// app.test4();
 		// app.test5();
-		
+
 		app.launch();
 	}
 
@@ -68,63 +68,68 @@ public class FilmQueryApp {
 			}
 
 			if (userChoice == 1) {
-				
-				System.out.println("Please enter a valid film id.\n"
-						+ "(Valid film ids are integer numbers from 1 to 1000.)");
-				
+
+				System.out.println(
+						"Please enter a valid film id.\n" + "(Valid film ids are integer numbers from 1 to 1000.)");
+
 				Film film = db.findFilmById(kb.nextInt());
 				kb.nextLine();
-				
+
 				if (film == null) {
-					System.out.println("Film not found. \n"
-							+ "Please be sure to enter a valid film id.");
+					System.out.println("Film not found. \n" + "Please try your search again using a valid film id or a new keyword search.");
 					System.out.println();
-				}
-				
-				else {
 					
+				}
+
+				else {
+
 					System.out.println(film);
 					System.out.println();
-				
+
 				}
 
 			}
 
 			if (userChoice == 2) {
-				
+
 				System.out.println("Please enter a keyword to search for a film.");
-				
+
 				List<Film> film = db.findFilmsBySearchKeyword(kb.next());
 				kb.nextLine();
-				System.out.println(film);
-				System.out.println();
-			
+				
+				
+				if (film.size()== 0) {
+					System.out.println("Film not found. \n" + "Please try your search again using a valid film id or a new keyword search.");
+					System.out.println();
+				}
+
+				else {
+
+					System.out.println(film);
+					System.out.println();
+
+				}
 
 			}
 
 			if (userChoice == 3) {
 
-
 			}
-						
 
 		}
-		
+
 		System.out.println("Goodbye!");
-	
+
 	}
 
-
 	private int getMenuChoice() {
-		System.out.println("======= Film Query Menu ============== \n\n"
-				+ "Please enter one of the numbers below.");
+		System.out.println("======= Film Query Menu ============== \n\n" + "Please enter one of the numbers below.");
 		System.out.println("1: Look up a film by its id");
 		System.out.println("2: Look up a film by a search keyword");
 		System.out.println("3: Exit the application");
 
 		int userMenuSelection;
-		
-		
+
 		try {
 			userMenuSelection = kb.nextInt();
 			if (userMenuSelection > 3 || userMenuSelection < 0) {
@@ -135,11 +140,8 @@ public class FilmQueryApp {
 			userMenuSelection = 0;
 		}
 		return userMenuSelection;
-	
-		
-	}
 
-	
+	}
 
 //	private void startUserInterface(Scanner input) {
 //

@@ -155,7 +155,7 @@ public class Film {
 	public String toString() {
 		return "\n\nTitle = " + title + "\n" + "Description = " + desc + "\n" + "Release Year = " + releaseYear +
 			 "\n" + "Rating = " + rating +  "\n" + "Language = " + language + "\n" + "Actors = "
-				+ actors + "\n";
+				+ actors + "\n\n";
 	}
 
 	@Override
