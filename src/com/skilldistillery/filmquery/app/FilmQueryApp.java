@@ -16,9 +16,9 @@ public class FilmQueryApp {
 		FilmQueryApp app = new FilmQueryApp();
 		// app.test();
 		// app.test2();
-		// app.test3();
+		//app.test3();
 		// app.test4();
-		app.test5();
+		// app.test5();
 		// app.launch();
 	}
 
@@ -45,7 +45,7 @@ public class FilmQueryApp {
 	}
 	
 	private void test5() {
-		List<Film> film = db.findFilmBySearchKeyword("Anaconda");
+		List<Film> film = db.findFilmsBySearchKeyword("Anaconda");
 		System.out.println(film);
 	}
 

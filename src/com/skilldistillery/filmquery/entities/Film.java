@@ -18,8 +18,6 @@ public class Film {
 	private String features;
 	private String language;
 
-	private List<Actor> actors;
-
 	public Film() {
 
 	}
@@ -42,108 +40,115 @@ public class Film {
 
 	}
 
+	private List<Actor> actors;
+
+	public Film(List<Actor> actors) {
+		super();
+		this.actors = actors;
+	}
+
 	public int getFilmId() {
 		return filmId;
 	}
 
-	public void setFilmId(int filmId) {
-		this.filmId = filmId;
+	public int setFilmId(int filmId) {
+		return this.filmId = filmId;
 	}
 
 	public String getTitle() {
 		return title;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public String setTitle(String title) {
+		return this.title = title;
 	}
 
 	public String getDesc() {
 		return desc;
 	}
 
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public String setDesc(String desc) {
+		return this.desc = desc;
 	}
 
 	public int getReleaseYear() {
 		return releaseYear;
 	}
 
-	public void setReleaseYear(int releaseYear) {
-		this.releaseYear = releaseYear;
+	public int setReleaseYear(int releaseYear) {
+		return this.releaseYear = releaseYear;
 	}
 
 	public String getLangId() {
 		return langId;
 	}
 
-	public void setLangId(String langId) {
-		this.langId = langId;
+	public String setLangId(String langId) {
+		return this.langId = langId;
 	}
 
 	public int getRentDur() {
 		return rentDur;
 	}
 
-	public void setRentDur(int rentDur) {
-		this.rentDur = rentDur;
+	public int setRentDur(int rentDur) {
+		return this.rentDur = rentDur;
 	}
 
 	public double getRate() {
 		return rate;
 	}
 
-	public void setRate(double rate) {
-		this.rate = rate;
+	public double setRate(double rate) {
+		return this.rate = rate;
 	}
 
 	public int getLength() {
 		return length;
 	}
 
-	public void setLength(int length) {
-		this.length = length;
+	public int setLength(int length) {
+		return this.length = length;
 	}
 
 	public double getRepCost() {
 		return repCost;
 	}
 
-	public void setRepCost(double repCost) {
-		this.repCost = repCost;
+	public double setRepCost(double repCost) {
+		return this.repCost = repCost;
 	}
 
 	public String getRating() {
 		return rating;
 	}
 
-	public void setRating(String rating) {
-		this.rating = rating;
+	public String setRating(String rating) {
+		return this.rating = rating;
 	}
 
 	public String getFeatures() {
 		return features;
 	}
 
-	public void setFeatures(String features) {
-		this.features = features;
+	public String setFeatures(String features) {
+		return this.features = features;
 	}
 
 	public String getLanguage() {
 		return language;
 	}
 
-	public void setLanguage(String language) {
-		this.language = language;
+	public String setLanguage(String language) {
+		return this.language = language;
 	}
 
 	public List<Actor> getActors() {
 		return actors;
 	}
 
-	public void setActors(List<Actor> actors) {
-		this.actors = actors;
+	public List<Actor> setActors(List<Actor> actors) {
+		return this.actors = actors;
 	}
 
 	@Override
